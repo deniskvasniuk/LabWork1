@@ -40,44 +40,43 @@
         </div>
     </nav>
     <div class="carousel-inner">
-        <div class="carousel-item active">
-            <svg class="bd-placeholder-img" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="none" width="100%" height="100%">
-                <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
-            </svg>
-            <div class="container">
-                <div class="carousel-caption text-start">
-                    <h1>Example headline.</h1>
-                    <p class="opacity-75">Some representative placeholder content for the first slide of the carousel.</p>
-                    <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <!-- Замініть шлях до зображення на власне для першого слайда -->
+                    <img src="img/carousel_img_1.jpg" alt="Перший слайд" style="object-fit: cover;">
+                    <div class="container">
+                        <div class="carousel-caption text-start">
+                            <h1>Example headline.</h1>
+                            <p class="opacity-75">Some representative placeholder content for the first slide of the carousel.</p>
+                            <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <!-- Замініть шлях до зображення на власне для другого слайда -->
+                    <img src="img/carousel_img_2.jpg" alt="Другий слайд" style="object-fit: cover;">
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h1>Another example headline.</h1>
+                            <p>Some representative placeholder content for the second slide of the carousel.</p>
+                            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <!-- Замініть шлях до зображення на власне для третього слайда -->
+                    <img src="img/carousel_img_3.jpg" alt="Третій слайд" style="object-fit: cover;">
+                    <div class="container">
+                        <div class="carousel-caption text-end">
+                            <h1>One more for good measure.</h1>
+                            <p>Some representative placeholder content for the third slide of this carousel.</p>
+                            <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="carousel-item">
-            <svg class="bd-placeholder-img" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="none" width="100%" height="100%">
-                <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
-            </svg>
-            <div class="container">
-                <div class="carousel-caption">
-                    <h1>Another example headline.</h1>
-                    <p>Some representative placeholder content for the second slide of the carousel.</p>
-                    <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <svg class="bd-placeholder-img" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="none" width="100%" height="100%">
-                <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
-            </svg>
-            <div class="container">
-                <div class="carousel-caption text-end">
-                    <h1>One more for good measure.</h1>
-                    <p>Some representative placeholder content for the third slide of this carousel.</p>
-                    <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
-
 
         <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
