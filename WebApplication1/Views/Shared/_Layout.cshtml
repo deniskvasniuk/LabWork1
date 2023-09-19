@@ -36,7 +36,6 @@
     <script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="lib/bootstrap/js/bootstrap.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-
     <!-- header section strats -->
     <header class="header_section">
         <div class="container-fluid">
@@ -52,27 +51,27 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
-                        <ul class="navbar-nav  ">
+                        <ul class="navbar-nav">
                             <li class="nav-item active">
-                                <a class="nav-link" asp-controller="Home" asp-action="Index">Home <span class="sr-only">(current)</span></a>
+                                <a class="nav-link" asp-controller="home" asp-action="index">Home <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="About" asp-action="Index">About</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" asp-controller="Service" asp-action="Index">Services</a>
+                                <a class="nav-link" asp-controller="about" asp-action="index">About</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="News" asp-action="Index">News</a>
+                                <a class="nav-link" asp-controller="service" asp-action="index">Services</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="Contact" asp-action="Index">Contact Us</a>
+                                <a class="nav-link" asp-controller="news" asp-action="index">News</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="contact" asp-action="index">Contact Us</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Login</a>
                             </li>
                         </ul>
+
                     </div>
                 </div>
             </nav>
@@ -101,24 +100,25 @@
                 <div class="info_links">
                     <ul>
                         <li class=" ">
-                            <a class="nav-link" asp-controller="Home" asp-action="Index">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" asp-controller="home" asp-action="index">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="">
-                            <a class="nav-link" asp-controller="About" asp-action="Index"> About</a>
+                            <a class="nav-link" asp-controller="about" asp-action="index">About</a>
                         </li>
                         <li class="">
-                            <a class="nav-link" asp-controller="Service" asp-action="Index"> Services </a>
+                            <a class="nav-link" asp-controller="service" asp-action="index">Services</a>
                         </li>
                         <li class="">
-                            <a class="nav-link" asp-controller="News" asp-action="Index"> News</a>
+                            <a class="nav-link" asp-controller="news" asp-action="index">News</a>
                         </li>
                         <li class="">
-                            <a class="nav-link" asp-controller="Contact" asp-action="Index">>Contact Us</a>
+                            <a class="nav-link" asp-controller="contact" asp-action="index">Contact Us</a>
                         </li>
                         <li class="">
                             <a class="" href="#">Login</a>
                         </li>
                     </ul>
+
                 </div>
                 <div class="info_social">
                     <div>
