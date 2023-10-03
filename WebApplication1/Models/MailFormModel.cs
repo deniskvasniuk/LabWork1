@@ -6,11 +6,5 @@
         public string Email { get; set; }
         public string Msg { get; set; }
 
-        public MailFormModel()
-        {
-            Name = string.Empty;
-            Email = string.Empty;
-            Msg = string.Empty;
-        }
     }
 }

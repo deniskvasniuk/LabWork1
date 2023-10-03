@@ -1,23 +1,17 @@
 ﻿using LabWork1.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
-using MimeKit;
 using LabWork2.Services;
-using MailKit.Net.Smtp;
-using Microsoft.Extensions.Configuration;
 
-namespace YourNamespace.Controllers
+namespace LabWork1.Controllers
 {
     public class NewsletterController : Controller
     {
-        private readonly IConfiguration _configuration;
-        private readonly IMailService _mailService;
+        private readonly IEmailSender _emailSender;
         private readonly ILogger <NewsletterController> _logger;
 
-        public NewsletterController(IConfiguration configuration, IMailService mailService, ILogger<NewsletterController> logger)
+        public NewsletterController(IEmailSender emailSender, ILogger<NewsletterController> logger)
         {
-            _configuration = configuration;
-            _mailService = mailService;
+            _emailSender = emailSender;
             _logger = logger;
 
         }
@@ -32,7 +26,7 @@ namespace YourNamespace.Controllers
 
             try
             {
-                _mailService.SendMail(model.Name, model.Email, model.Msg);
+                _emailSender.SendMail(model.Name, model.Email, model.Msg);
             }
             catch (Exception ex)
             {

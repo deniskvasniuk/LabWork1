@@ -4,22 +4,22 @@ using Microsoft.Extensions.Logging;
 using MimeKit;
 
 
-
 namespace LabWork2.Services
 {
 
-    public interface IMailService
+    public interface IEmailSender
     {
         void SendMail(string name, string email, string msg);
     }
 
-    public class MailService : IMailService
+    public class EmailSender : IEmailSender
     {
-        readonly ILogger<MailService> _logger;
+        readonly ILogger<EmailSender> _logger;
         readonly IConfiguration _configuration;
-        public MailService(IConfiguration configuration)
+        public EmailSender(IConfiguration configuration, ILogger<EmailSender> logger)
         {
             _configuration = configuration;
+            _logger = logger;
 
         }
         public void SendMail(string name, string email, string msg)

@@ -11,14 +11,14 @@ namespace WebApplication1.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly IMailService _mailService;
+        private readonly IEmailSender _emailSender;
         private readonly IConfiguration _configuration;
 
-        public HomeController(ILogger<HomeController> logger, IConfiguration configuration, IMailService mailService)
+        public HomeController(ILogger<HomeController> logger, IConfiguration configuration, IEmailSender emailSender)
         {
             _logger = logger;
             _configuration = configuration;
-            _mailService = mailService;
+            _emailSender = emailSender;
         }
 
         public IActionResult Index()
