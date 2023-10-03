@@ -319,11 +319,11 @@
                     <h4>
                         Get In touch
                     </h4>
-                    <form action="">
-                        <input type="text" placeholder="Name">
-                        <input type="text" placeholder="Email">
-                        <input type="text" placeholder="Message" class="message_input">
-                        <button>Send</button>
+                    <form method="post" action="">
+                        <input name="Name" type="text" placeholder="Name">
+                        <input name="Email" type="text" placeholder="Email">
+                        <input name="Msg" type="text" placeholder="Message" class="message_input">
+                        <button type="submit" formaction="/newsletter/subscribe" formmethod="post">Send</button>
                     </form>
                 </div>
             </div>

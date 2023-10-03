@@ -89,14 +89,15 @@
                     <h4>
                         Subscribe Our Newsletter
                     </h4>
-                    <form action="">
-                        <input type="text" placeholder="Enter your email">
+                    <form method="post" action="/Newsletter/Subscribe">
+                        <!-- Встановіть метод POST та дію контролера -->
+                        <input type="text" name="email" placeholder="Enter your email"> <!-- Додайте атрибут "name" для поля email -->
                         <div class="d-flex justify-content-end">
-                            <button>
-                            </button>
+                            <button type="submit">Subscribe</button> <!-- Додайте тип кнопки та текст кнопки -->
                         </div>
                     </form>
                 </div>
+
                 <div class="info_links">
                     <ul>
                         <li class=" ">
