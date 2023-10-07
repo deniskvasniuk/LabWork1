@@ -27,6 +27,7 @@ namespace LabWork1.Controllers
             try
             {
                 _emailSender.SendMail(model.Name, model.Email, model.Msg);
+                _logger.LogInformation($"Mail: email is successfully sent to {model.Email}");
             }
             catch (Exception ex)
             {
