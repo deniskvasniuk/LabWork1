@@ -41,16 +41,9 @@ app.UseAuthorization();
 
 app.Use((context, next) =>
 {
-    var request = context.Request;
-    var ipAddress = context.Connection.RemoteIpAddress;
-    var requestTime = DateTime.Now;
-
-    var logMessage = $"{request.Scheme}://{request.Host}{request.Path}{request.QueryString} [:] " +
-                     $"T:{requestTime}, " +
-                     $"IP:{ipAddress}";
-
-    Log.Information(logMessage);
-
+    Log.Information($"{context.Request.Scheme}://{context.Request.Host}{context.Request.Path}{context.Request.QueryString} [:] " +
+                    $"T:{DateTime.Now}, " +
+                    $"IP:{context.Connection.RemoteIpAddress}");
     return next();
 });
 
