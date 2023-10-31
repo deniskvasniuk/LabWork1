@@ -67,13 +67,18 @@
                         <h4>
                             Get A Taxi Now
                         </h4>
-                        <form action="">
-                            <input type="text" placeholder="Car Type">
-                            <input type="text" placeholder="Pick Up Location">
-                            <input type="text" placeholder="Drop Location">
-                            <div class="btm_input">
-                                <input type="text" placeholder="Your Phone Number">
-                                <button>Book Now</button>
+                        <form action="" method="post" enctype="multipart/form-data" style="margin: 15px 0;">
+                            <div class="form-group">
+                                <label for="BackgroundImage" class="control-label"></label>
+                                <input name="PhotoFile" type="file" class="form-control" />
+                            </div>
+    
+                            <input name="PhoneNumber" type="text" placeholder="Your Phone Number" style="width: 100%; height: 40px; border: none; outline: none; margin-bottom: 15px; padding-left: 15px;">
+                            <input name="PickUpLocation" type="text" placeholder="Pick Up Location" style="width: 100%; height: 40px; border: none; outline: none; margin-bottom: 15px; padding-left: 15px;">
+                            <input name="DropLocation" type="text" placeholder="Drop Location" style="width: 100%; height: 40px; border: none; outline: none; margin-bottom: 15px; padding-left: 15px;">
+    
+                            <div class="btm_input" style="display: flex;">
+                                <button formaction="/bookings/addbooking" formmethod="post" style="flex: 1; min-width: 116px; border: none; outline: none; background-color: $primary1; color: $white;">Book Now</button>
                             </div>
                         </form>
                     </div>
@@ -84,6 +89,7 @@
     </section>
     <!-- end slider section -->
 </div>
+
 
 <!-- about section -->
 

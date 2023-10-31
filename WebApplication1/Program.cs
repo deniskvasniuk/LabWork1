@@ -1,16 +1,25 @@
+using System.Configuration;
+using LabWork1.Models;
 using LabWork2.Services;
+using Microsoft.EntityFrameworkCore;
 using Serilog;
-using Serilog.Extensions.Logging;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+string connection = builder.Configuration.GetConnectionString("BookingContext");
+builder.Services.AddDbContext<BookingContext>(options => options.UseSqlServer(connection));
+
 builder.Services.AddScoped<IEmailSender, EmailSender>();
+builder.Services.AddScoped<IFileService, FileService>();
 
 
 builder.Logging.ClearProviders();
+
 
 
 builder.Logging.AddSerilog();
