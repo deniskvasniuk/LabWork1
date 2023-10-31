@@ -23,7 +23,6 @@ namespace LabWork2.Services
                     Directory.CreateDirectory(path);
                 }
 
-                // Check the allowed extenstions
                 var ext = Path.GetExtension(imageFile.FileName);
                 var allowedExtensions = new string[] { ".jpg", ".JPG", ".jpeg", ".JPEG", ".png", ".PNG", ".gif", ".GIF", 
                     ".bmp", ".BMP", ".tiff", ".TIFF", ".svg", ".SVG", ".webp", ".WEBP", ".raw", ".RAW", ".eps", ".EPS" };
