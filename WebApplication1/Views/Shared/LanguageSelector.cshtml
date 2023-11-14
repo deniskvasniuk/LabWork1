@@ -1,0 +1,22 @@
+﻿@using Microsoft.AspNetCore.Localization;
+@using Microsoft.Extensions.Options;
+
+@inject IOptions<RequestLocalizationOptions> LangOptions
+@{
+    var requestCulture = Context.Features.Get<IRequestCultureFeature>();
+    var cultureItems = LangOptions.Value.SupportedUICultures
+        .Select(c => new SelectListItem { Value = c.Name, Text = c.DisplayName })
+        .ToList();
+}
+
+
+<div>
+    <form class="nav-link" asp-controller="Home"
+          asp-action="SetLang"
+          asp-route-returnUrl="@Context.Request.Path" method="post">
+        <select name="culture" onchange="this.form.submit();"
+                asp-for="@requestCulture.RequestCulture.UICulture.Name"
+                asp-items="cultureItems" class="form-select-sm">
+        </select>
+    </form>
+</div>

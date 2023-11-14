@@ -3,8 +3,7 @@ using System.Diagnostics;
 using LabWork1.Models;
 using WebApplication1.Models;
 using LabWork2.Services;
-using LabWork1.Models;
-
+using Microsoft.AspNetCore.Localization;
 
 namespace WebApplication1.Controllers
 {
@@ -32,6 +31,19 @@ namespace WebApplication1.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+        [HttpPost]
+        public IActionResult SetLang(string culture, string returnUrl)
+        {
+            Response.Cookies.Append(
+                CookieRequestCultureProvider.DefaultCookieName,
+                CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
+                new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1) }
+            );
+
+            return LocalRedirect(returnUrl);
+        }
+
+
 
     }
 }

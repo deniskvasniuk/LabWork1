@@ -1,6 +1,9 @@
-using System.Configuration;
+using System.Globalization;
 using LabWork1.Models;
 using LabWork2.Services;
+using LabWork1;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 
@@ -8,8 +11,25 @@ using Serilog;
 var builder = WebApplication.CreateBuilder(args);
 
 
-// Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews()
+    .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
+    .AddDataAnnotationsLocalization(options => {
+        options.DataAnnotationLocalizerProvider = (type, factory) =>
+            factory.Create(typeof(LangResource));
+    });
+
+builder.Services.AddLocalization(options => { options.ResourcesPath = "Resources"; });
+builder.Services.Configure<RequestLocalizationOptions>(options =>
+{
+    var supportedCultures = new[]
+    {
+        new CultureInfo("en"),
+        new CultureInfo("uk"),
+    };
+    options.DefaultRequestCulture = new RequestCulture("en");
+    options.SupportedCultures = supportedCultures;
+    options.SupportedUICultures = supportedCultures;
+});
 
 string connection = builder.Configuration.GetConnectionString("BookingContext");
 builder.Services.AddDbContext<BookingContext>(options => options.UseSqlServer(connection));
@@ -40,6 +60,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+app.UseRequestLocalization();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
