@@ -945,4 +945,7 @@ a:focus {
 .footer_section a {
   color: #000000;
 }
+form span {
+    color: #c73331;
+}
 /*# sourceMappingURL=style.css.map */

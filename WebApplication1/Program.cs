@@ -6,12 +6,20 @@ using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
+using System;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 
 
 var builder = WebApplication.CreateBuilder(args);
 
 
 builder.Services.AddControllersWithViews()
+    .AddFluentValidation(s =>
+    {
+        s.RegisterValidatorsFromAssemblyContaining<Program>();
+
+    })
     .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
     .AddDataAnnotationsLocalization(options => {
         options.DataAnnotationLocalizerProvider = (type, factory) =>
@@ -36,6 +44,7 @@ string connection = builder.Configuration.GetConnectionString("BookingContext");
 builder.Services.AddDbContext<BookingContext>(options => options.UseSqlServer(connection));
 builder.Services.AddScoped<IEmailSender, EmailSender>();
 builder.Services.AddScoped<IFileService, FileService>();
+builder.Services.AddScoped<IValidator<AppUser>, AppUserValidator>();
 
 
 builder.Logging.ClearProviders();
