@@ -32,8 +32,8 @@ builder.Services.Configure<RequestLocalizationOptions>(options =>
 });
 
 string connection = builder.Configuration.GetConnectionString("BookingContext");
-builder.Services.AddDbContext<BookingContext>(options => options.UseSqlServer(connection));
 
+builder.Services.AddDbContext<BookingContext>(options => options.UseSqlServer(connection));
 builder.Services.AddScoped<IEmailSender, EmailSender>();
 builder.Services.AddScoped<IFileService, FileService>();
 

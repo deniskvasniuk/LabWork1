@@ -43,7 +43,10 @@ namespace WebApplication1.Controllers
             return LocalRedirect(returnUrl);
         }
 
-
+        public IActionResult Navbar()
+        {
+            return ViewComponent("Navbar");
+        }
 
     }
 }
